@@ -1,9 +1,9 @@
-const repeatTexto = (texto, numero) => texto.repeat(numero);
-
 const inputEl = document.getElementById("inputTexto");
 const inputNum = document.getElementById("inputNumero")
 const btnEl = document.getElementById("btnCalcular");
 const resultEl = document.getElementById("resultadoTexto");
+
+const repeatTexto = (texto, numero) => texto.repeat(numero);
 
 btnEl.addEventListener("click", () => {
     const texto = inputEl.value;
@@ -17,4 +17,8 @@ btnEl.addEventListener("click", () => {
 
     resultEl.innerHTML = `${repeatTexto(texto + "<br>", numero)}`;
     resultEl.style.color = "white";
+
+    inputEl.value = "";
+    inputNum.value = "";
+    inputEl.focus();
 });
